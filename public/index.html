@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Spy Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div>
+            <h2 class="player-indicator">You are Player {{ playerId }}</h2>
+            <div class="player-list">
+                <div v-for="player in players" :key="player.playerId" class="player-item">
+                    Player {{ player.playerId }}: {{ player.foundItemsCount }} found
+                </div>
+            </div>
+        </div>
+        <div class="game-container">
+            <img src="images/GameImage1.jpg" class="game-image" alt="I Spy Game Image" usemap="#game-map">
+            <map name="game-map">
+                <div v-for="item in items" :key="item.id" 
+                    :id="item.id" 
+                    class="clickable-area"
+                    :style="{ top: item.top + 'px', left: item.left + 'px', width: item.width + 'px', height: item.height + 'px' }"
+                    @click="handleItemClick(item.id)">
+                </div>
+                <!-- <div id="clock" class="clickable-area" style="top: 270px; left: 190px; width: 50px; height: 35px;" @click="handleItemClick()"></div> -->
+            </map>
+        </div>
+        <div class="item-list">
+            <h3>Items to Find:</h3>
+            <ul>
+                <li v-for="item in items" :key="item.id">{{ item.name }}</li>
+            </ul>
+        </div>
+        <div class="modal" v-if="showModal">
+            <div class="modal-content">
+                <span class="close" @click="resetGame">&times;</span>
+                <h2>Game Over!</h2>
+                <p>Player {{ winningPlayer }} found the most items!</p>
+                <button @click="resetGame">Reset Game</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

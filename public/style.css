@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff3def5;
+}
+
+#app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.player-indicator {
+    font-weight: bold;
+    position: fixed;
+    background-color: #f0f0f0;
+    margin-left: 30px;
+    top: 0px; 
+    left: 10px; 
+    z-index: 2; 
+    border: 5px solid #811e1e;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.player-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    position: fixed;
+    top: 15px; 
+    left: 0;
+    right: 0;
+    z-index: 2; 
+    margin-left: 300px; 
+    margin-right: 100px; 
+    border: 5px solid #811e1e;
+    border-radius: 6px;
+}
+
+.player-item {
+    font-weight: bold;
+    border: 2px solid #811e1e;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.game-container {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    width: 500px;
+    height: 500px; 
+    background-color: #fff; 
+}
+
+.game-image {
+    height: 100%;
+    user-select: none;
+}
+
+.clickable-area {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.item-list {
+    position: fixed; 
+    top: 50%;
+    left: calc(50% - 300px); 
+    transform: translate(-90%, -30%);
+    width: 200px;
+    height: 420px;
+    padding: 10px; 
+    background-color: #ffffff; 
+    z-index: 1; 
+    border: 10px solid #811e1e;
+    border-radius: 6px;
+}
+
+h3 {
+    text-align: center;
+    font-size: x-large;
+    margin-top: 0;
+    border-bottom: 2px solid #811e1e;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+li {
+    font-weight: bold;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+
+.modal-content {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fefefe;
+    padding: 20px;
+    width: 30rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 10px solid #811e1e;
+    border-radius: 6px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
